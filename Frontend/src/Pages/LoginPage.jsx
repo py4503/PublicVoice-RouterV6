@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
+import { useNavigate } from 'react-router-dom';  // ✅ Import useNavigate
 
 const Login = () => {
   const [formData, setFormData] = useState({ userId: '', password: '', department: '' });
   const { login, isLoggingIn } = useAuthStore();
+  const navigate = useNavigate();  // ✅ Initialize navigate
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(formData);
+    await login(formData, navigate);  // ✅ Pass navigate to login
     console.log('Login with:', formData);
   };
 
@@ -84,4 +86,3 @@ const Login = () => {
 };
 
 export default Login;
-

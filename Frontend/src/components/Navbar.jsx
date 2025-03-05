@@ -58,9 +58,7 @@ export default function Navbar() {
         <SlidersHorizontal className="text-neutral-900 cursor-pointer" onClick={toggleFilterVisibility}/>
       </div>
       
-      <button className="bg-violet-700 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-blue-400">
-        Login
-      </button>
+      
     </nav>
   );
 }

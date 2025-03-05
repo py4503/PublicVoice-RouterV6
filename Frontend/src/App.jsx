@@ -74,10 +74,11 @@ function App() {
       {/* Main Content */}
        <>
       <Routes>
-        <Route path="/" element={ authUser ? <HomePage /> : <Navigate to="/login" />} />
-
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
+            <Route>
+                <Route path="/" element={<Login />} />
+                <Route path="/home" element={<HomePage />} />
+            </Route>
+        </Routes>
       
       </>
     </div>
