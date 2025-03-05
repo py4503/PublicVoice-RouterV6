@@ -8,6 +8,7 @@ export const useAuthStore = create((set) => ({
     authUser: null,
     isCheckingAuth: true,
     isLoggingIn: false,
+    department:null,
 
     checkAuth: async () => {
         try {
@@ -31,6 +32,7 @@ export const useAuthStore = create((set) => ({
 
             if (res?.data) {
                 set({ authUser: res.data });
+                set({ department: res.data.department });
                 toast.success('User logged in successfully');
 
                 localStorage.setItem('authUser', JSON.stringify(res.data));

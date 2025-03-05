@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const problemSchema = new mongoose.Schema({
+const complaintSchema = new mongoose.Schema({
    /* title: {
         type: String,
         required: true
@@ -45,5 +45,5 @@ const problemSchema = new mongoose.Schema({
     }
 });
 
-const Problem = mongoose.model('Problem', problemSchema);
-module.exports = Problem;
+const Complaint = mongoose.model('Complaint', complaintSchema);
+ export default Complaint

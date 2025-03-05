@@ -2,6 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 import User from "../models/user.model.js";
 import { generateToken } from "../lib/utils.js";
+import Complaint from "../models/complaint.model.js";
 
 const router = express.Router();
 
@@ -30,5 +31,24 @@ router.post("/login", async(req, res) =>{
     }
 
 });
+
+router.get('/complaints', async (req, res) => {
+  try {
+    const { department } = req.query; // Get department from query params
+
+    if (!department) {
+      return res.status(400).json({ message: 'Department is required' });
+    }
+
+    // Fetch complaints that match the department
+    const complaints = await Complaint.find({ category: department });
+
+    res.status(200).json(complaints);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching complaints', error });
+  }
+});
+
+
 
 export default router
