@@ -4,6 +4,12 @@ import './index.css';
 import GrievanceCard from './components/GrievanceCard';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SearchFilter';
+import {Routes , Route} from 'react-router-dom';
+import LoginPage from './Pages/LoginPage';
+import HomePage from './Pages/HomePage';
+import Login from './Pages/LoginPage';
+import { useAuthStore } from './store/useAuthStore';
+import { Navigate } from 'react-router-dom';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: -9999, y: -9999 }); // Start outside screen
@@ -26,6 +32,8 @@ function App() {
       dots.push({ x, y });
     }
   }
+
+  const { authUser } = useAuthStore();
 
   return (
     <div
@@ -64,15 +72,14 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10">
-        <Navbar />
-        <div className="flex">
-          <Sidebar />
-          <div className="flex-1 p-4">
-            <GrievanceCard />
-          </div>
-        </div>
-      </div>
+       <>
+      <Routes>
+        <Route path="/" element={ authUser ? <HomePage /> : <Navigate to="/login" />} />
+
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+      
+      </>
     </div>
   );
 }
