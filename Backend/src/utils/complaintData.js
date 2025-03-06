@@ -4,7 +4,7 @@ const sampleComplaints = [
     category: "Electricity",
     city: "Indore",
     image: "https://example.com/images/street-lights.jpg",
-    month: new Date("2025-02-01"),
+    month: new Date("2025-02-01T00:00:00Z"), // ISO 8601 format
     urgency: "High"
   },
   {
@@ -12,7 +12,7 @@ const sampleComplaints = [
     category: "Road",
     city: "Bhopal",
     image: "https://example.com/images/potholes.jpg",
-    month: new Date("2025-01-15"),
+    month: new Date("2025-01-15T00:00:00Z"),
     urgency: "High"
   },
   {
@@ -20,7 +20,7 @@ const sampleComplaints = [
     category: "Sanitation",
     city: "Mumbai",
     image: "https://example.com/images/garbage.jpg",
-    month: new Date("2025-02-10"),
+    month: new Date("2025-02-10T00:00:00Z"),
     urgency: "Medium"
   },
   {
@@ -28,7 +28,7 @@ const sampleComplaints = [
     category: "Roadways",
     city: "Delhi",
     image: "https://example.com/images/traffic-signal.jpg",
-    month: new Date("2025-03-05"),
+    month: new Date("2025-03-05T00:00:00Z"),
     urgency: "High"
   },
   {
@@ -36,7 +36,7 @@ const sampleComplaints = [
     category: "Electricity",
     city: "Pune",
     image: "https://example.com/images/water-leakage.jpg",
-    month: new Date("2025-01-20"),
+    month: new Date("2025-01-20T00:00:00Z"),
     urgency: "High"
   },
   {
@@ -44,7 +44,7 @@ const sampleComplaints = [
     category: "Sanitation",
     city: "Kolkata",
     image: "https://example.com/images/drainage-issue.jpg",
-    month: new Date("2025-02-28"),
+    month: new Date("2025-02-28T00:00:00Z"),
     urgency: "Medium"
   },
   {
@@ -52,7 +52,7 @@ const sampleComplaints = [
     category: "Road",
     city: "Chennai",
     image: "https://example.com/images/speed-breakers.jpg",
-    month: new Date("2025-03-01"),
+    month: new Date("2025-03-01T00:00:00Z"),
     urgency: "Low"
   },
   {
@@ -60,7 +60,7 @@ const sampleComplaints = [
     category: "Roadways",
     city: "Bangalore",
     image: "https://example.com/images/traffic-jam.jpg",
-    month: new Date("2025-02-22"),
+    month: new Date("2025-02-22T00:00:00Z"),
     urgency: "Medium"
   }
 ];

@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
-import { useNavigate } from 'react-router-dom';  // ✅ Import useNavigate
+import { useNavigate } from 'react-router-dom';  
 
 const Login = () => {
   const [formData, setFormData] = useState({ userId: '', password: '', department: '' });
   const { login, isLoggingIn } = useAuthStore();
-  const navigate = useNavigate();  // ✅ Initialize navigate
+  const navigate = useNavigate();  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(formData, navigate);  // ✅ Pass navigate to login
+
+    if (!formData.department) {
+      alert("Please select a department");
+      return;
+    }
+
     console.log('Login with:', formData);
+    await login(formData, navigate);
   };
 
   return (
